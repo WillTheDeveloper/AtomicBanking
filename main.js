@@ -5,7 +5,7 @@ const con = mysql.createConnection({
     user: 'root',
     password: 'HighPavement92!',
     database: 'bankjs',
-    port: 2222
+    port: 3306
 });
 
 con.connect(function(err) {
