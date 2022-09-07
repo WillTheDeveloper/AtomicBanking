@@ -1,3 +1,18 @@
+const mysql = require('mysql');
+
+const con = mysql.createConnection({
+    host: 'localhost',
+    user: 'root',
+    password: '0@7kNT8?=zXHi;@8y_s86E3ki/;nvG6o',
+    database: 'bankjs',
+    port: 2222
+});
+
+con.connect(function(err) {
+    if (err) throw err;
+    console.log("Connected!");
+});
+
 let accounts = [
     {name: 'Peter', balance: 100, active: true, number: 123456789, pin: 1234, lastLogin: null},
     {name: 'John', balance: 200, active: false, number: 987654321, pin: 4321, lastLogin: null},
