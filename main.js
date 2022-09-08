@@ -1,17 +1,19 @@
 const mysql = require('mysql');
 
-const con = mysql.createConnection({
-    host: 'localhost',
-    user: 'root',
-    password: 'HighPavement92!',
-    database: 'bankjs',
-    port: 3306
-});
+function connectDatabase() {
+    const con = mysql.createConnection({
+        host: 'localhost',
+        user: 'root',
+        password: 'HighPavement92!',
+        database: 'bankjs',
+        port: 3306
+    });
 
-con.connect(function(err) {
-    if (err) throw err;
-    console.log("Connected!");
-});
+    con.connect(function(err) {
+        if (err) throw err;
+        console.log("Connected!");
+    });
+}
 
 let accounts = [
     {name: 'Peter', balance: 100, active: true, number: 123456789, pin: 1234, lastLogin: null},
@@ -20,6 +22,8 @@ let accounts = [
     {name: 'Jane', balance: 400, active: false, number: 457457457, pin: 2222, lastLogin: null},
     {name: 'Bob', balance: 500, active: true, number: 789789789, pin: 3333, lastLogin: null},
 ];
+
+connectDatabase();
 
 console.log("Enter account number: ");
 const readline = require('readline').createInterface({
