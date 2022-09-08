@@ -2,18 +2,24 @@ const mysql = require('mysql');
 const config = require('./config.json');
 
 function connectDatabase() {
-    const con = mysql.createConnection({
-        host: config.database.host,
-        user: config.database.user,
-        password: config.database.password,
-        database: config.database.database,
-        port: config.database.port
-    });
+    if (config.database.enabled) {
+        console.log('Connecting to database...');
+        const con = mysql.createConnection({
+            host: config.database.host,
+            user: config.database.user,
+            password: config.database.password,
+            database: config.database.database,
+            port: config.database.port
+        });
 
-    con.connect(function(err) {
-        if (err) throw err;
-        console.log("Connected!");
-    });
+        con.connect(function (err) {
+            if (err) throw err;
+            console.log("Connected!");
+        });
+    }
+    else {
+        console.log("Database disabled");
+    }
 }
 
 let accounts = [
@@ -24,7 +30,7 @@ let accounts = [
     {name: 'Bob', balance: 500, active: true, number: 789789789, pin: 3333, lastLogin: null},
 ];
 
-connectDatabase();
+// connectDatabase();
 
 console.log("Enter account number: ");
 const readline = require('readline').createInterface({
