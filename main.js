@@ -1,12 +1,13 @@
 const mysql = require('mysql');
+const config = require('./config.json');
 
 function connectDatabase() {
     const con = mysql.createConnection({
-        host: 'localhost',
-        user: 'root',
-        password: 'HighPavement92!',
-        database: 'bankjs',
-        port: 3306
+        host: config.database.host,
+        user: config.database.user,
+        password: config.database.password,
+        database: config.database.database,
+        port: config.database.port
     });
 
     con.connect(function(err) {
