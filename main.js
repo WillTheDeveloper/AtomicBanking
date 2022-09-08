@@ -14,7 +14,7 @@ function connectDatabase() {
 
         con.connect(function (err) {
             if (err) throw err;
-            console.log("Connected!");
+            console.log("Connected to database");
         });
     }
     else {
