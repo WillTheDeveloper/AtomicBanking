@@ -17,7 +17,7 @@ let accounts = [
     {name: 'Peter', balance: 100, active: true, number: 123456789, pin: 1234, lastLogin: null},
     {name: 'John', balance: 200, active: false, number: 987654321, pin: 4321, lastLogin: null},
     {name: 'Mary', balance: 300, active: true, number: 123123123, pin: 1111, lastLogin: null},
-    {name: 'Jane', balance: 400, active: false, number: 456456456, pin: 2222, lastLogin: null},
+    {name: 'Jane', balance: 400, active: false, number: 457457457, pin: 2222, lastLogin: null},
     {name: 'Bob', balance: 500, active: true, number: 789789789, pin: 3333, lastLogin: null},
 ];
 
