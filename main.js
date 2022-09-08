@@ -63,8 +63,6 @@ readline.question('Enter pin: ', pin => {
     readline.close();
 });
 
-increaseBalance(currentAccount.number, 100);
-
 function increaseBalance(account, amount) {
     account.balance += amount;
 }
